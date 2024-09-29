@@ -1,0 +1,10 @@
+package main
+
+templ home() {
+<div>
+    <h1>User List</h1>
+    <div hx-get="/users" hx-trigger="load" hx-target="#userTable">
+        <div id="userTable"></div>
+    </div>
+</div>
+}

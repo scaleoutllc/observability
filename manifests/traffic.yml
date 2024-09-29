@@ -1,0 +1,295 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: siege
+  namespace: demo
+data:
+  .siegerc: |
+    verbose = true
+    color = on
+    quiet = false
+    json_output = false
+    show-logfile = true
+    logging = false
+    gmethod = HEAD
+    parser = false
+    limit = 255
+    protocol = HTTP/1.1
+    chunked = true
+    cache = false
+    connection = close
+    delay = 0.0 
+    failures = 0
+    internet = true
+    benchmark = false
+    accept-encoding = gzip, deflate
+    url-escaping = true
+    unique = true
+  urls: |
+    http://panel.demo/v1/bad
+    http://panel.demo/v1/invalid
+    http://panel.demo/v1/4afe3656-f49b-4cdd-a677-c9d71f4e30b9
+    http://panel.demo/v1/d227da7a-e504-4714-a100-6c7d43455466
+    http://panel.demo/v1/445314cb-e37b-4337-a46b-dc65a088c953
+    http://panel.demo/v1/b9200962-2585-443b-9c3c-e9ec99f8db20
+    http://panel.demo/v1/4f82c2af-486c-411c-a533-a411d14fb2bb
+    http://panel.demo/v1/d888a098-a548-4d44-8a26-128f8d3b66e1
+    http://panel.demo/v1/167acac7-d0b7-4dcf-a55c-9ba3648b15e1
+    http://panel.demo/v1/b97b9089-2d72-4916-8c91-b2fe1d7e1abf
+    http://panel.demo/v1/42348e83-1125-4f00-9da4-8bb525067dd1
+    http://panel.demo/v1/a45490a3-57ec-4c77-b66d-91d4c89f7785
+    http://panel.demo/v1/efaee79a-2f6e-47f3-82b2-3e862c9285fb
+    http://panel.demo/v1/b7f5a617-cf61-4df0-a2c4-90d9b8d01060
+    http://panel.demo/v1/c51b21d5-d45c-47b5-9850-c1db21a8ef9f
+    http://panel.demo/v1/1ae62da0-548b-4ba7-9bd7-1e79c030e914
+    http://panel.demo/v1/ab616c7b-a67e-4f73-885f-2528b824f74f
+    http://panel.demo/v1/fc98da16-3ff6-4c79-8d2d-9ad10cdd4903
+    http://panel.demo/v1/3f805c89-96ba-48ef-91cc-58a18b709e99
+    http://panel.demo/v1/1c04215e-24c2-43e6-bf7e-6e80c1b5a5a2
+    http://panel.demo/v1/00792a24-0003-4d46-9851-4a71273cf7ad
+    http://panel.demo/v1/d86b76b4-3a53-44b0-b69d-c5452e4f02d8
+    http://panel.demo/v1/c20f462d-0414-4297-bbe4-1228a65b2ebd
+    http://panel.demo/v1/28e85c5d-dfaa-4f02-b30a-caf9c0c04d3b
+    http://panel.demo/v1/56e19633-c42a-49d3-b899-bc91e9f37419
+    http://panel.demo/v1/a96c3b29-4107-4021-8e01-75a60654d8e6
+    http://panel.demo/v1/b00c8c3d-fb05-4396-8b8e-f832ee90d8e5
+    http://panel.demo/v1/7feadadf-7654-45e4-8765-bfd4de1893fd
+    http://panel.demo/v1/d09d2d95-260d-41f6-8492-42e09e736d6f
+    http://panel.demo/v1/d4770ba5-7d2a-499f-87d2-115cc09ffce2
+    http://panel.demo/v1/00d27610-3969-4328-9215-42d6d55bb8c9
+    http://panel.demo/v1/34dfdb7c-4d37-488f-812d-8576cf8f2730
+    http://panel.demo/v1/5b3df1e4-e41c-4fb9-91de-e9bb7fbc5cda
+    http://panel.demo/v1/8bb8cb8d-0ff4-4c8d-9c7f-3c9dc27c1ea6
+    http://panel.demo/v1/65d14b32-f588-4d47-9f0a-9c673bbf4a63
+    http://panel.demo/v1/5a0ab2c1-9f25-4e5d-b578-e9f7401e93d1
+    http://panel.demo/v1/2db7a2f7-bb0e-45e7-8544-7155e9f45228
+    http://panel.demo/v1/04686c28-0e36-4e7e-8b6a-f4537bb8b2f6
+    http://panel.demo/v1/416c497b-202f-4452-9b9e-14a30a9b6431
+    http://panel.demo/v1/3a488f54-d0c3-4881-830f-69b5c51d9ab1
+    http://panel.demo/v1/3dbd3182-6d86-4454-bbcf-b5d049c2461f
+    http://panel.demo/v1/f741ad5f-05b2-4b39-9b65-df9e6da50780
+    http://panel.demo/v1/a1b293f8-11de-4e07-b921-c9379c8b5a2f
+    http://panel.demo/v1/2f839e33-4711-46b2-83db-8f6f6a46f1e1
+    http://panel.demo/v1/4afe3656-f49b-4cdd-a677-c9d71f4e30b9/arm POST 
+    http://panel.demo/v1/d227da7a-e504-4714-a100-6c7d43455466/arm POST
+    http://panel.demo/v1/445314cb-e37b-4337-a46b-dc65a088c953/arm POST
+    http://panel.demo/v1/b9200962-2585-443b-9c3c-e9ec99f8db20/arm POST
+    http://panel.demo/v1/4f82c2af-486c-411c-a533-a411d14fb2bb/arm POST
+    http://panel.demo/v1/d888a098-a548-4d44-8a26-128f8d3b66e1/arm POST
+    http://panel.demo/v1/167acac7-d0b7-4dcf-a55c-9ba3648b15e1/arm POST
+    http://panel.demo/v1/b97b9089-2d72-4916-8c91-b2fe1d7e1abf/arm POST
+    http://panel.demo/v1/42348e83-1125-4f00-9da4-8bb525067dd1/arm POST
+    http://panel.demo/v1/a45490a3-57ec-4c77-b66d-91d4c89f7785/arm POST
+    http://panel.demo/v1/efaee79a-2f6e-47f3-82b2-3e862c9285fb/arm POST
+    http://panel.demo/v1/b7f5a617-cf61-4df0-a2c4-90d9b8d01060/arm POST
+    http://panel.demo/v1/c51b21d5-d45c-47b5-9850-c1db21a8ef9f/arm POST
+    http://panel.demo/v1/1ae62da0-548b-4ba7-9bd7-1e79c030e914/arm POST
+    http://panel.demo/v1/ab616c7b-a67e-4f73-885f-2528b824f74f/arm POST
+    http://panel.demo/v1/fc98da16-3ff6-4c79-8d2d-9ad10cdd4903/arm POST
+    http://panel.demo/v1/3f805c89-96ba-48ef-91cc-58a18b709e99/arm POST
+    http://panel.demo/v1/1c04215e-24c2-43e6-bf7e-6e80c1b5a5a2/arm POST
+    http://panel.demo/v1/00792a24-0003-4d46-9851-4a71273cf7ad/arm POST
+    http://panel.demo/v1/d86b76b4-3a53-44b0-b69d-c5452e4f02d8/arm POST
+    http://panel.demo/v1/c20f462d-0414-4297-bbe4-1228a65b2ebd/arm POST
+    http://panel.demo/v1/28e85c5d-dfaa-4f02-b30a-caf9c0c04d3b/arm POST
+    http://panel.demo/v1/56e19633-c42a-49d3-b899-bc91e9f37419/arm POST
+    http://panel.demo/v1/a96c3b29-4107-4021-8e01-75a60654d8e6/arm POST
+    http://panel.demo/v1/b00c8c3d-fb05-4396-8b8e-f832ee90d8e5/arm POST
+    http://panel.demo/v1/7feadadf-7654-45e4-8765-bfd4de1893fd/arm POST
+    http://panel.demo/v1/d09d2d95-260d-41f6-8492-42e09e736d6f/arm POST
+    http://panel.demo/v1/d4770ba5-7d2a-499f-87d2-115cc09ffce2/arm POST
+    http://panel.demo/v1/00d27610-3969-4328-9215-42d6d55bb8c9/arm POST
+    http://panel.demo/v1/34dfdb7c-4d37-488f-812d-8576cf8f2730/arm POST
+    http://panel.demo/v1/5b3df1e4-e41c-4fb9-91de-e9bb7fbc5cda/arm POST
+    http://panel.demo/v1/8bb8cb8d-0ff4-4c8d-9c7f-3c9dc27c1ea6/arm POST
+    http://panel.demo/v1/65d14b32-f588-4d47-9f0a-9c673bbf4a63/arm POST
+    http://panel.demo/v1/5a0ab2c1-9f25-4e5d-b578-e9f7401e93d1/arm POST
+    http://panel.demo/v1/2db7a2f7-bb0e-45e7-8544-7155e9f45228/arm POST
+    http://panel.demo/v1/04686c28-0e36-4e7e-8b6a-f4537bb8b2f6/arm POST
+    http://panel.demo/v1/416c497b-202f-4452-9b9e-14a30a9b6431/arm POST
+    http://panel.demo/v1/3a488f54-d0c3-4881-830f-69b5c51d9ab1/arm POST
+    http://panel.demo/v1/3dbd3182-6d86-4454-bbcf-b5d049c2461f/arm POST
+    http://panel.demo/v1/f741ad5f-05b2-4b39-9b65-df9e6da50780/arm POST
+    http://panel.demo/v1/a1b293f8-11de-4e07-b921-c9379c8b5a2f/arm POST
+    http://panel.demo/v1/2f839e33-4711-46b2-83db-8f6f6a46f1e1/arm POST
+    http://panel.demo/v1/4afe3656-f49b-4cdd-a677-c9d71f4e30b9/disarm POST
+    http://panel.demo/v1/d227da7a-e504-4714-a100-6c7d43455466/disarm POST
+    http://panel.demo/v1/445314cb-e37b-4337-a46b-dc65a088c953/disarm POST
+    http://panel.demo/v1/b9200962-2585-443b-9c3c-e9ec99f8db20/disarm POST
+    http://panel.demo/v1/4f82c2af-486c-411c-a533-a411d14fb2bb/disarm POST
+    http://panel.demo/v1/d888a098-a548-4d44-8a26-128f8d3b66e1/disarm POST
+    http://panel.demo/v1/167acac7-d0b7-4dcf-a55c-9ba3648b15e1/disarm POST
+    http://panel.demo/v1/b97b9089-2d72-4916-8c91-b2fe1d7e1abf/disarm POST
+    http://panel.demo/v1/42348e83-1125-4f00-9da4-8bb525067dd1/disarm POST
+    http://panel.demo/v1/a45490a3-57ec-4c77-b66d-91d4c89f7785/disarm POST
+    http://panel.demo/v1/efaee79a-2f6e-47f3-82b2-3e862c9285fb/disarm POST
+    http://panel.demo/v1/b7f5a617-cf61-4df0-a2c4-90d9b8d01060/disarm POST
+    http://panel.demo/v1/c51b21d5-d45c-47b5-9850-c1db21a8ef9f/disarm POST
+    http://panel.demo/v1/1ae62da0-548b-4ba7-9bd7-1e79c030e914/disarm POST
+    http://panel.demo/v1/ab616c7b-a67e-4f73-885f-2528b824f74f/disarm POST
+    http://panel.demo/v1/fc98da16-3ff6-4c79-8d2d-9ad10cdd4903/disarm POST
+    http://panel.demo/v1/3f805c89-96ba-48ef-91cc-58a18b709e99/disarm POST
+    http://panel.demo/v1/1c04215e-24c2-43e6-bf7e-6e80c1b5a5a2/disarm POST
+    http://panel.demo/v1/00792a24-0003-4d46-9851-4a71273cf7ad/disarm POST
+    http://panel.demo/v1/d86b76b4-3a53-44b0-b69d-c5452e4f02d8/disarm POST
+    http://panel.demo/v1/c20f462d-0414-4297-bbe4-1228a65b2ebd/disarm POST
+    http://panel.demo/v1/28e85c5d-dfaa-4f02-b30a-caf9c0c04d3b/disarm POST
+    http://panel.demo/v1/56e19633-c42a-49d3-b899-bc91e9f37419/disarm POST
+    http://panel.demo/v1/a96c3b29-4107-4021-8e01-75a60654d8e6/disarm POST
+    http://panel.demo/v1/b00c8c3d-fb05-4396-8b8e-f832ee90d8e5/disarm POST
+    http://panel.demo/v1/7feadadf-7654-45e4-8765-bfd4de1893fd/disarm POST
+    http://panel.demo/v1/d09d2d95-260d-41f6-8492-42e09e736d6f/disarm POST
+    http://panel.demo/v1/d4770ba5-7d2a-499f-87d2-115cc09ffce2/disarm POST
+    http://panel.demo/v1/00d27610-3969-4328-9215-42d6d55bb8c9/disarm POST
+    http://panel.demo/v1/34dfdb7c-4d37-488f-812d-8576cf8f2730/disarm POST
+    http://panel.demo/v1/5b3df1e4-e41c-4fb9-91de-e9bb7fbc5cda/disarm POST
+    http://panel.demo/v1/8bb8cb8d-0ff4-4c8d-9c7f-3c9dc27c1ea6/disarm POST
+    http://panel.demo/v1/65d14b32-f588-4d47-9f0a-9c673bbf4a63/disarm POST
+    http://panel.demo/v1/5a0ab2c1-9f25-4e5d-b578-e9f7401e93d1/disarm POST
+    http://panel.demo/v1/2db7a2f7-bb0e-45e7-8544-7155e9f45228/disarm POST
+    http://panel.demo/v1/04686c28-0e36-4e7e-8b6a-f4537bb8b2f6/disarm POST
+    http://panel.demo/v1/416c497b-202f-4452-9b9e-14a30a9b6431/disarm POST
+    http://panel.demo/v1/3a488f54-d0c3-4881-830f-69b5c51d9ab1/disarm POST
+    http://panel.demo/v1/3dbd3182-6d86-4454-bbcf-b5d049c2461f/disarm POST
+    http://panel.demo/v1/f741ad5f-05b2-4b39-9b65-df9e6da50780/disarm POST
+    http://panel.demo/v1/a1b293f8-11de-4e07-b921-c9379c8b5a2f/disarm POST
+    http://panel.demo/v1/2f839e33-4711-46b2-83db-8f6f6a46f1e1/disarm POST
+    http://panel.demo/v1/4afe3656-f49b-4cdd-a677-c9d71f4e30b9/trigger POST
+    http://panel.demo/v1/d227da7a-e504-4714-a100-6c7d43455466/trigger POST
+    http://panel.demo/v1/445314cb-e37b-4337-a46b-dc65a088c953/trigger POST
+    http://panel.demo/v1/b9200962-2585-443b-9c3c-e9ec99f8db20/trigger POST
+    http://panel.demo/v1/4f82c2af-486c-411c-a533-a411d14fb2bb/trigger POST
+    http://panel.demo/v1/d888a098-a548-4d44-8a26-128f8d3b66e1/trigger POST
+    http://panel.demo/v1/167acac7-d0b7-4dcf-a55c-9ba3648b15e1/trigger POST
+    http://panel.demo/v1/b97b9089-2d72-4916-8c91-b2fe1d7e1abf/trigger POST
+    http://panel.demo/v1/42348e83-1125-4f00-9da4-8bb525067dd1/trigger POST
+    http://panel.demo/v1/a45490a3-57ec-4c77-b66d-91d4c89f7785/trigger POST
+    http://panel.demo/v1/efaee79a-2f6e-47f3-82b2-3e862c9285fb/trigger POST
+    http://panel.demo/v1/b7f5a617-cf61-4df0-a2c4-90d9b8d01060/trigger POST
+    http://panel.demo/v1/c51b21d5-d45c-47b5-9850-c1db21a8ef9f/trigger POST
+    http://panel.demo/v1/1ae62da0-548b-4ba7-9bd7-1e79c030e914/trigger POST
+    http://panel.demo/v1/ab616c7b-a67e-4f73-885f-2528b824f74f/trigger POST
+    http://panel.demo/v1/fc98da16-3ff6-4c79-8d2d-9ad10cdd4903/trigger POST
+    http://panel.demo/v1/3f805c89-96ba-48ef-91cc-58a18b709e99/trigger POST
+    http://panel.demo/v1/1c04215e-24c2-43e6-bf7e-6e80c1b5a5a2/trigger POST
+    http://panel.demo/v1/00792a24-0003-4d46-9851-4a71273cf7ad/trigger POST
+    http://panel.demo/v1/d86b76b4-3a53-44b0-b69d-c5452e4f02d8/trigger POST
+    http://panel.demo/v1/c20f462d-0414-4297-bbe4-1228a65b2ebd/trigger POST
+    http://panel.demo/v1/28e85c5d-dfaa-4f02-b30a-caf9c0c04d3b/trigger POST
+    http://panel.demo/v1/56e19633-c42a-49d3-b899-bc91e9f37419/trigger POST
+    http://panel.demo/v1/a96c3b29-4107-4021-8e01-75a60654d8e6/trigger POST
+    http://panel.demo/v1/b00c8c3d-fb05-4396-8b8e-f832ee90d8e5/trigger POST
+    http://panel.demo/v1/7feadadf-7654-45e4-8765-bfd4de1893fd/trigger POST
+    http://panel.demo/v1/d09d2d95-260d-41f6-8492-42e09e736d6f/trigger POST
+    http://panel.demo/v1/d4770ba5-7d2a-499f-87d2-115cc09ffce2/trigger POST
+    http://panel.demo/v1/00d27610-3969-4328-9215-42d6d55bb8c9/trigger POST
+    http://panel.demo/v1/34dfdb7c-4d37-488f-812d-8576cf8f2730/trigger POST
+    http://panel.demo/v1/5b3df1e4-e41c-4fb9-91de-e9bb7fbc5cda/trigger POST
+    http://panel.demo/v1/8bb8cb8d-0ff4-4c8d-9c7f-3c9dc27c1ea6/trigger POST
+    http://panel.demo/v1/65d14b32-f588-4d47-9f0a-9c673bbf4a63/trigger POST
+    http://panel.demo/v1/5a0ab2c1-9f25-4e5d-b578-e9f7401e93d1/trigger POST
+    http://panel.demo/v1/2db7a2f7-bb0e-45e7-8544-7155e9f45228/trigger POST
+    http://panel.demo/v1/04686c28-0e36-4e7e-8b6a-f4537bb8b2f6/trigger POST
+    http://panel.demo/v1/416c497b-202f-4452-9b9e-14a30a9b6431/trigger POST
+    http://panel.demo/v1/3a488f54-d0c3-4881-830f-69b5c51d9ab1/trigger POST
+    http://panel.demo/v1/3dbd3182-6d86-4454-bbcf-b5d049c2461f/trigger POST
+    http://panel.demo/v1/f741ad5f-05b2-4b39-9b65-df9e6da50780/trigger POST
+    http://panel.demo/v1/a1b293f8-11de-4e07-b921-c9379c8b5a2f/trigger POST
+    http://panel.demo/v1/2f839e33-4711-46b2-83db-8f6f6a46f1e1/trigger POST
+    http://panel.demo/v1/4afe3656-f49b-4cdd-a677-c9d71f4e30b9/clear POST
+    http://panel.demo/v1/d227da7a-e504-4714-a100-6c7d43455466/clear POST
+    http://panel.demo/v1/445314cb-e37b-4337-a46b-dc65a088c953/clear POST
+    http://panel.demo/v1/b9200962-2585-443b-9c3c-e9ec99f8db20/clear POST
+    http://panel.demo/v1/4f82c2af-486c-411c-a533-a411d14fb2bb/clear POST
+    http://panel.demo/v1/d888a098-a548-4d44-8a26-128f8d3b66e1/clear POST
+    http://panel.demo/v1/167acac7-d0b7-4dcf-a55c-9ba3648b15e1/clear POST
+    http://panel.demo/v1/b97b9089-2d72-4916-8c91-b2fe1d7e1abf/clear POST
+    http://panel.demo/v1/42348e83-1125-4f00-9da4-8bb525067dd1/clear POST
+    http://panel.demo/v1/a45490a3-57ec-4c77-b66d-91d4c89f7785/clear POST
+    http://panel.demo/v1/efaee79a-2f6e-47f3-82b2-3e862c9285fb/clear POST
+    http://panel.demo/v1/b7f5a617-cf61-4df0-a2c4-90d9b8d01060/clear POST
+    http://panel.demo/v1/c51b21d5-d45c-47b5-9850-c1db21a8ef9f/clear POST
+    http://panel.demo/v1/1ae62da0-548b-4ba7-9bd7-1e79c030e914/clear POST
+    http://panel.demo/v1/ab616c7b-a67e-4f73-885f-2528b824f74f/clear POST
+    http://panel.demo/v1/fc98da16-3ff6-4c79-8d2d-9ad10cdd4903/clear POST
+    http://panel.demo/v1/3f805c89-96ba-48ef-91cc-58a18b709e99/clear POST
+    http://panel.demo/v1/1c04215e-24c2-43e6-bf7e-6e80c1b5a5a2/clear POST
+    http://panel.demo/v1/00792a24-0003-4d46-9851-4a71273cf7ad/clear POST
+    http://panel.demo/v1/d86b76b4-3a53-44b0-b69d-c5452e4f02d8/clear POST
+    http://panel.demo/v1/c20f462d-0414-4297-bbe4-1228a65b2ebd/clear POST
+    http://panel.demo/v1/28e85c5d-dfaa-4f02-b30a-caf9c0c04d3b/clear POST
+    http://panel.demo/v1/56e19633-c42a-49d3-b899-bc91e9f37419/clear POST
+    http://panel.demo/v1/a96c3b29-4107-4021-8e01-75a60654d8e6/clear POST
+    http://panel.demo/v1/b00c8c3d-fb05-4396-8b8e-f832ee90d8e5/clear POST
+    http://panel.demo/v1/7feadadf-7654-45e4-8765-bfd4de1893fd/clear POST
+    http://panel.demo/v1/d09d2d95-260d-41f6-8492-42e09e736d6f/clear POST
+    http://panel.demo/v1/d4770ba5-7d2a-499f-87d2-115cc09ffce2/clear POST
+    http://panel.demo/v1/00d27610-3969-4328-9215-42d6d55bb8c9/clear POST
+    http://panel.demo/v1/34dfdb7c-4d37-488f-812d-8576cf8f2730/clear POST
+    http://panel.demo/v1/5b3df1e4-e41c-4fb9-91de-e9bb7fbc5cda/clear POST
+    http://panel.demo/v1/8bb8cb8d-0ff4-4c8d-9c7f-3c9dc27c1ea6/clear POST
+    http://panel.demo/v1/65d14b32-f588-4d47-9f0a-9c673bbf4a63/clear POST
+    http://panel.demo/v1/5a0ab2c1-9f25-4e5d-b578-e9f7401e93d1/clear POST
+    http://panel.demo/v1/2db7a2f7-bb0e-45e7-8544-7155e9f45228/clear POST
+    http://panel.demo/v1/04686c28-0e36-4e7e-8b6a-f4537bb8b2f6/clear POST
+    http://panel.demo/v1/416c497b-202f-4452-9b9e-14a30a9b6431/clear POST
+    http://panel.demo/v1/3a488f54-d0c3-4881-830f-69b5c51d9ab1/clear POST
+    http://panel.demo/v1/3dbd3182-6d86-4454-bbcf-b5d049c2461f/clear POST
+    http://panel.demo/v1/f741ad5f-05b2-4b39-9b65-df9e6da50780/clear POST
+    http://panel.demo/v1/a1b293f8-11de-4e07-b921-c9379c8b5a2f/clear POST
+    http://panel.demo/v1/2f839e33-4711-46b2-83db-8f6f6a46f1e1/clear POST
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: traffic-spike
+  namespace: demo
+spec:
+  schedule: "*/3 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: siege
+            image: jstarcher/siege
+            command: ["sh", "-c", "siege -R /etc/siege/.siegerc -f /etc/siege/urls -c 100 -r 100"]
+            volumeMounts:
+            - name: siege
+              mountPath: /etc/siege
+          volumes:
+          - name: siege
+            configMap:
+              name: siege
+          restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traffic-baseline
+  namespace: demo
+spec:
+  containers:
+  - name: siege
+    image: jstarcher/siege
+    command: ["sh", "-c", "siege -R /etc/siege/.siegerc -f /etc/siege/urls -t 8760h -c 20"]
+    volumeMounts:
+    - name: siege
+      mountPath: /etc/siege
+  volumes:
+  - name: siege
+    configMap:
+      name: siege
+  restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traffic-monitor-poll
+  namespace: demo
+spec:
+  containers:
+  - name: curl
+    image: curlimages/curl
+    command: ["/bin/sh", "-c", "while true; do curl http://monitor/v1/all; sleep 1; done"]
+  restartPolicy: OnFailure

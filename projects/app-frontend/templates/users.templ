@@ -1,0 +1,32 @@
+package main
+
+templ users(users []User) {
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Systems</th>
+        </tr>
+    </thead>
+    <tbody>
+        for _, user := range users {
+        <tr>
+            <td>{user.ID}</td>
+            <td>{user.Name}</td>
+            <td>{user.Email}</td>
+            <td>{user.Country}</td>
+            <td>
+                <ul>
+                    for _, alarm := range user.Systems {
+                    <li>{alarm}</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}

@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: panel
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: panel
+  template:
+    metadata:
+      labels:
+        app: panel
+    spec:
+      containers:
+      - name: panel
+        image: service-panel:latest
+        imagePullPolicy: Never # manually loaded into kind
+        env:
+        - name: PANEL_SERVER_PORT
+          value: "8080"
+        - name: PANEL_EMAIL_ENDPOINT
+          value: http://email
+        - name: PANEL_USER_ENDPOINT
+          value: http://user
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: http://telemetry-collector.honeycomb.svc.cluster.local:4318
+        - name: OTEL_SERVICE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app']
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /readiness
+            port: http
+          initialDelaySeconds: 0
+          periodSeconds: 5 # wait 5 secs between each try
+          timeoutSeconds: 1 # wait 1 secs for response on each try
+          successThreshold: 1 
+          failureThreshold: 6 # if failed for 30s (fail*period) consider unready
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /liveness
+            port: http
+          initialDelaySeconds: 0
+          periodSeconds: 5
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 6 # if failed for 30s (fail*period) consider dead
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: panel
+  name: panel
+  namespace: demo
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  selector:
+    app: panel

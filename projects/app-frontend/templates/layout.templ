@@ -1,0 +1,29 @@
+package main
+
+templ layout(content templ.Component) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the User List Application</h1>
+    </header>
+
+    <main>
+        @contents
+    </main>
+
+    <footer>
+        <p>&copy; 2024 User List App</p>
+    </footer>
+</body>
+
+</html>
+}

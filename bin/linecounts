@@ -1,0 +1,22 @@
+#!/bin/bash
+SCRIPT_PATH="$(cd "$(dirname "$0")"; pwd -P)"
+
+total_lines=0
+tracing_lines=0
+
+for file in $(find "$SCRIPT_PATH/../" -name *.go); do
+    file_total=$(wc -l < "$file")
+    total_lines=$((total_lines + file_total))
+    file_tracing=$(grep -c "// tracing" "$file")
+    tracing_lines=$((tracing_lines + file_tracing))
+done
+
+if [ "$total_lines" -ne 0 ]; then
+    percentage=$(echo "scale=2; $tracing_lines * 100 / $total_lines" | bc)
+else
+    percentage=0
+fi
+
+echo "Total lines: $total_lines"
+echo "Tracing lines: $tracing_lines"
+echo "Tracing code as percentage of all code: $percentage%"

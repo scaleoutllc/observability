@@ -1,0 +1,28 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  profile: minimal
+  meshConfig:
+    accessLogFile: /dev/stdout
+    defaultConfig:
+      holdApplicationUntilProxyStarts: true
+    enableTracing: true
+    extensionProviders:
+    - name: opentelemetry
+      opentelemetry:
+        service: telemetry-collector.istio-system.svc.cluster.local
+        port: 4318
+        http:
+          path: /v1/traces
+          timeout: 10s
+  components:
+    pilot:
+      k8s:
+        resources:
+          requests:
+            memory: 512Mi
+        tolerations:
+        - operator: Exists
+  values:
+    global:
+      imagePullPolicy: Always
